@@ -1,7 +1,7 @@
 package listpackage;
 
 /**
- * Anime Class.
+ * Anime Class. This class represents a single anime.
  *
  * @author 55jphillip
  */
