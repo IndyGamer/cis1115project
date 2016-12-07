@@ -1,7 +1,7 @@
 package listpackage;
 
 /**
- * Pet class.
+ * Anime Class.
  *
  * @author 55jphillip
  */
