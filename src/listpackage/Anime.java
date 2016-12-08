@@ -1,5 +1,7 @@
 package listpackage;
 
+import java.time.Clock;
+
 /**
  * Anime Class. This class represents a single anime.
  *
@@ -76,7 +78,7 @@ public class Anime {
 
     @Override
     public String toString() {
-        return "Anime{" + "id=" + id + ", name=" + name + ", genre=" + genre + ", studio=" + studio + ", episode number=" + episodenumber + ", rating=" + rating + '}';
+        return String.format("%5d %-25s %-10s %-20s %d %-5f", id, name, genre, studio, episodenumber, rating);
     }
 
 }
