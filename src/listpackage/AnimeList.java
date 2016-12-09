@@ -117,7 +117,7 @@ public class AnimeList {
         Path path = Paths.get(fileName);
         try (BufferedWriter writer = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             for (Anime anime : myList) {
-                writer.write(String.format("%d,%s,%s,%s,%d,%f",
+                writer.write(String.format("%d,%s,%s,%s,%d,%f,/n",
                         anime.getId(),
                         anime.getName(),
                         anime.getGenre(),

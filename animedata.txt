@@ -1,1 +1,1 @@
-1,Test,Shounen,Idk,700,4.0000002,Test,Test,Idk,24,4.0000003,Test2,Test2,Test2,13,5.0000004,Boku No Hero Academia,Shounen,idk,13,4.5000005,Death Parade,Sienen,Madhouse,13,5.000000
+2,Boku No Hero Academia,Shounen,Shounen Jump,13,5.000000,/n4,Death Parade,Sienen,Madhouse,13,5.000000,/n1,One Piece,Shounen,A1,700,4.000000,/n3,Erased,Mystery,A1,13,3.800000,/n
