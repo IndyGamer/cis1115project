@@ -3,6 +3,7 @@ package listpackage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
@@ -36,8 +37,8 @@ public class AnimeList {
     }
 
     public String statistics() {
-        double min = Double.MIN_VALUE;
-        double max = Double.MAX_VALUE;
+        double min = Double.MAX_VALUE;
+        double max = Double.MIN_VALUE;
         for (Anime anime : myList) {
             if (anime.getRating() < min) {
                 min = anime.getRating();
@@ -62,7 +63,7 @@ public class AnimeList {
         if (total > 0) {
             standarddeviation = Math.sqrt(total /(count - 1));
         }
-        return String.format("%20.2f,%20.2f,%20.2f, %20.2f, %20.2f", sum, average, max, min, standarddeviation);
+        return String.format("%n %5.2f %20.2f %20.2f %20.2f %20.2f", sum, average, max, min, standarddeviation);
     }
 
     

@@ -119,8 +119,8 @@ public class AnimeAppMenu {
                     System.out.println(data.orderByNameGenre());
                     break;
                 case 14:
-                    System.out.printf(String.format("%-20s,%-20s,%-20s,%-20s,%-20s, %n", "sum", "average", "maximum", "minimum", "standard deviation"));
-                    data.statistics();
+                    System.out.printf("%n %-20s %-20s %-20s %-20s %-20s", "sum", "average", "maximum", "minimum", "standard deviation", "\n");
+                    System.out.println(data.statistics());
                     break;
                 case 0:
                     break;
