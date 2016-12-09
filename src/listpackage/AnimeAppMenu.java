@@ -38,13 +38,16 @@ public class AnimeAppMenu {
             System.out.println("8 = Retrieve All: Order by Genre");
             System.out.println("9 = Retrieve All: Order by Studio");
             System.out.println("10 = Retrieve All: Order by Episode Number");
-            System.out.println("11 = Retrieve All: Order by Rating");
-            System.out.println("12 = Retrieve All: Order by Name / Genre");
-            System.out.println("13 = Statistics");
+            System.out.println("11 = Retrieve All: Order by reverse Episode Number");
+            System.out.println("12 = Retrieve All: Order by Rating");
+            System.out.println("13 = Retrieve All: Order by Name / Genre");
+            System.out.println("14 = Statistics");
             choice = Prompt.getInt("Number of choice: ", 0, 14);
 
             switch (choice) {
                 case 1:
+                    System.out.printf("\n%5s %-25s %-20s %-20s %-20s %-20s %n", "Id", "Name", "Genre", "Studio", "Total Episodes", "Rating");
+                    System.out.println("***************************************************************************************************");
                     System.out.println(data.toString());
                     break;
                 case 2:
@@ -62,33 +65,62 @@ public class AnimeAppMenu {
                     System.out.println(data.retrieve(id));
                     break;
                 case 4:
+                    id = Prompt.getInt("Enter anime id: ");
+                    name = Prompt.getLine("Enter name: ");
+                    genre = Prompt.getLine("Enter genre: ");
+                    studio = Prompt.getLine("Enter studio: ");
+                    episodenumber = Prompt.getInt("Enter episode Number: ");
+                    rating = Prompt.getDouble("Enter rating: ");
+                    Anime Anime = new Anime(id, name, genre, studio, episodenumber, rating);
+                    data.update(Anime);
                     break;
                 case 5:
                     id = Prompt.getInt("Enter Anime id: ");
                     data.delete(id);
                     break;
                 case 6:
+                    System.out.printf("\n%5s %-25s %-20s %-20s %-20s %-20s %n", "Id", "Name", "Genre", "Studio", "Total Episodes", "Rating");
+                    System.out.println("***************************************************************************************************");
                     System.out.println(data.orderById());
                     break;
                 case 7:
+                    System.out.printf("\n%5s %-25s %-20s %-20s %-20s %-20s %n", "Id", "Name", "Genre", "Studio", "Total Episodes", "Rating");
+                    System.out.println("***************************************************************************************************");
                     System.out.println(data.orderByName());
                     break;
                 case 8:
+                    System.out.printf("\n%5s %-25s %-20s %-20s %-20s %-20s %n", "Id", "Name", "Genre", "Studio", "Total Episodes", "Rating");
+                    System.out.println("***************************************************************************************************");
                     System.out.println(data.orderByGenre());
                     break;
                 case 9:
+                    System.out.printf("\n%5s %-25s %-20s %-20s %-20s %-20s %n", "Id", "Name", "Genre", "Studio", "Total Episodes", "Rating");
+                    System.out.println("***************************************************************************************************");
                     System.out.println(data.orderByStudio());
                     break;
                 case 10:
+                    System.out.printf("\n%5s %-25s %-20s %-20s %-20s %-20s %n", "Id", "Name", "Genre", "Studio", "Total Episodes", "Rating");
+                    System.out.println("***************************************************************************************************");
                     System.out.println(data.orderByEpisodenumber());
                     break;
                 case 11:
-                    System.out.println(data.orderByRating());
+                    System.out.printf("\n%5s %-25s %-20s %-20s %-20s %-20s %n", "Id", "Name", "Genre", "Studio", "Total Episodes", "Rating");
+                    System.out.println("***************************************************************************************************");
+                    System.out.println(data.orderByEpisodeNumberReversed());
                     break;
                 case 12:
-                    System.out.println(data.orderByNameGenre());
+                    System.out.printf("\n%5s %-25s %-20s %-20s %-20s %-20s %n", "Id", "Name", "Genre", "Studio", "Total Episodes", "Rating");
+                    System.out.println("***************************************************************************************************");
+                    System.out.println(data.orderByRating());
                     break;
                 case 13:
+                    System.out.printf("\n%5s %-25s %-20s %-20s %-20s %-20s %n", "Id", "Name", "Genre", "Studio", "Total Episodes", "Rating");
+                    System.out.println("***************************************************************************************************");
+                    System.out.println(data.orderByNameGenre());
+                    break;
+                case 14:
+                    System.out.printf(String.format("%-20s,%-20s,%-20s,%-20s,%-20s, %n", "sum", "average", "maximum", "minimum", "standard deviation"));
+                    data.statistics();
                     break;
                 case 0:
                     break;

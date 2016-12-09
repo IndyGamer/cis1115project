@@ -61,7 +61,7 @@ public class Anime {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 
@@ -78,8 +78,7 @@ public class Anime {
 
     @Override
     public String toString() {
-        System.out.println("id                         name                    genre                    studio          episode number          rating\n");
-        return String.format("%5d %-25s %-20s %-20s %-10d %-10f", id, name, genre, studio, episodenumber, rating);
+        return String.format("%5d %-25s %-20s %-20s %-20d %-20.1f", id, name, genre, studio, episodenumber, rating);
     }
 
 }

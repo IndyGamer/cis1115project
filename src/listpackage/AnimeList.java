@@ -35,6 +35,38 @@ public class AnimeList {
         readList();
     }
 
+    public String statistics() {
+        double min = Double.MIN_VALUE;
+        double max = Double.MAX_VALUE;
+        for (Anime anime : myList) {
+            if (anime.getRating() < min) {
+                min = anime.getRating();
+            }
+            if (anime.getRating() > max) {
+                max = anime.getRating();
+            }
+        }
+        double sum = 0;
+        int count = 0;
+        for (Anime anime : myList) {
+            sum += anime.getRating();
+            count++;
+        }
+        double average = 0;
+        average = sum / count;
+        double total = 0;
+        double standarddeviation = 0;
+        for (Anime anime : myList) {
+            total += Math.pow(anime.getRating() - average, 2);
+        }
+        if (total > 0) {
+            standarddeviation = Math.sqrt(total /(count - 1));
+        }
+        return String.format("%20.2f,%20.2f,%20.2f, %20.2f, %20.2f", sum, average, max, min, standarddeviation);
+    }
+
+    
+
     public void create(Anime anime) {
         myList.add(anime);
         writeList();
@@ -47,6 +79,21 @@ public class AnimeList {
             }
         }
         return null;
+    }
+
+    public void update(Anime anime) {
+        for (Anime a : myList) {
+            if (a.getId() == anime.getId()) {
+                a.setName(anime.getName());
+                a.setGenre(anime.getGenre());
+                a.setStudio(anime.getStudio());
+                a.setEpisodenumber(anime.getEpisodenumber());
+                a.setRating(anime.getRating());
+                // do this for all fields
+                break;
+            }
+        }
+        writeList();
     }
 
     public void delete(int id) {
@@ -78,18 +125,23 @@ public class AnimeList {
         return this.toString();
     }
 
-    public String orderByEpisodenumber() {
+    public String orderByEpisodeNumberReversed() {
         myList.sort(Comparator.comparing(Anime::getEpisodenumber).reversed());
         return this.toString();
     }
 
+    public String orderByEpisodenumber() {
+        myList.sort(Comparator.comparing(Anime::getEpisodenumber));
+        return this.toString();
+    }
+
     public String orderByRating() {
-        myList.sort(Comparator.comparing(Anime::getRating).reversed());
+        myList.sort(Comparator.comparing(Anime::getRating));
         return this.toString();
     }
 
     public String orderByNameGenre() {
-        myList.sort(Comparator.comparing(Anime::getName).thenComparing(Anime::getGenre).reversed());
+        myList.sort(Comparator.comparing(Anime::getGenre).thenComparing(Anime::getName));
         return this.toString();
     }
 
@@ -117,7 +169,7 @@ public class AnimeList {
         Path path = Paths.get(fileName);
         try (BufferedWriter writer = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             for (Anime anime : myList) {
-                writer.write(String.format("%d,%s,%s,%s,%d,%f,/n",
+                writer.write(String.format("%d,%s,%s,%s,%d,%f,\n",
                         anime.getId(),
                         anime.getName(),
                         anime.getGenre(),
