@@ -117,12 +117,12 @@ public class AnimeList {
     }
 
     public String orderByGenre() {
-        myList.sort(Comparator.comparing(Anime::getGenre).reversed());
+        myList.sort(Comparator.comparing(Anime::getGenre));
         return this.toString();
     }
 
     public String orderByStudio() {
-        myList.sort(Comparator.comparing(Anime::getStudio).reversed());
+        myList.sort(Comparator.comparing(Anime::getStudio));
         return this.toString();
     }
 
@@ -138,6 +138,11 @@ public class AnimeList {
 
     public String orderByRating() {
         myList.sort(Comparator.comparing(Anime::getRating));
+        return this.toString();
+    }
+    
+    public String orderByRatingReversed() {
+        myList.sort(Comparator.comparing(Anime::getRating).reversed());
         return this.toString();
     }
 
