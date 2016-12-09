@@ -25,6 +25,9 @@ public class Anime {
         this.rating = rating;
     }
 
+    public Anime() {
+    }
+
     public String getName() {
         return name;
     }
@@ -63,9 +66,6 @@ public class Anime {
 
     public void setRating(double rating) {
         this.rating = rating;
-    }
-
-    public Anime() {
     }
 
     public int getId() {

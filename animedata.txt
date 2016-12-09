@@ -5,3 +5,6 @@
 5,Erased,Mystery,A-1 Pictures,12,3.500000,
 1,Death Parade,Drama,Madhouse,12,5.000000,
 7,One Piece,Shounen,Toei Animation,767,4.000000,
+1,Test,Shounen,Idk,700,4.000000,
+2,Test,Shounen,Idk,700,4.000000,
+3,Test,Shounen,Idk,700,4.000000,

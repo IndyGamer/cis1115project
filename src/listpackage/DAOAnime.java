@@ -19,19 +19,19 @@ import java.util.logging.Logger;
  *
  * @author 55jphillip
  */
-public class AnimeList {
+public class DAOAnime {
 
     private final String fileName = "animedata.txt";
     private List<Anime> myList;
 
-    public AnimeList() {
+    public DAOAnime() {
         myList = new ArrayList();
         try {
             Files.createFile(Paths.get(fileName));
         } catch (FileAlreadyExistsException fae) {
             ;
         } catch (IOException ex) {
-            Logger.getLogger(AnimeList.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DAOAnime.class.getName()).log(Level.SEVERE, null, ex);
         }
         readList();
     }
@@ -167,7 +167,7 @@ public class AnimeList {
                 myList.add(myanime);
             }
         } catch (IOException ex) {
-            Logger.getLogger(AnimeList.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DAOAnime.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -184,7 +184,7 @@ public class AnimeList {
                         anime.getRating()));
             }
         } catch (IOException ex) {
-            Logger.getLogger(AnimeList.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DAOAnime.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

@@ -15,7 +15,7 @@ public class AnimeApp {
 
         System.out.println(pa);
         
-        AnimeList pl = new AnimeList();
+        DAOAnime pl = new DAOAnime();
         pl.create(new Anime(1,"Test", "Shounen", "Idk", 700, 4));
         pl.create(new Anime(2,"Test", "Shounen", "Idk", 700, 4));
         pl.create(new Anime(3,"Test", "Shounen", "Idk", 700, 4));
