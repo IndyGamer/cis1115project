@@ -37,11 +37,11 @@ public class AnimeAppMenu {
             System.out.println("7 = Retrieve All: Order by Name");
             System.out.println("8 = Retrieve All: Order by Genre");
             System.out.println("9 = Retrieve All: Order by Studio");
-            System.out.println("10 = Retrieve All: Order by Episode Number least to most.");
-            System.out.println("11 = Retrieve All: Order by Episode Number most to least");
-            System.out.println("12 = Retrieve All: Order by Rating least to most");
-            System.out.println("13 = Retrieve All: Order by Rating most to least");
-            System.out.println("14 = Retrieve All: Order by Genre, then by name both alphabetically.");
+            System.out.println("10 = Retrieve All: Order by Total Episodes from least to most.");
+            System.out.println("11 = Retrieve All: Order by Total from most to least");
+            System.out.println("12 = Retrieve All: Order by Rating from least to most");
+            System.out.println("13 = Retrieve All: Order by Rating from most to least");
+            System.out.println("14 = Retrieve All: Order by Genre, then by Name both alphabetically.");
             System.out.println("15 = Statistics");
             choice = Prompt.getInt("Number of choice: ", 0, 15);
 
