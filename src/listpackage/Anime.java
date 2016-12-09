@@ -78,7 +78,7 @@ public class Anime {
 
     @Override
     public String toString() {
-        return String.format("%5d %-25s %-20s %-20s %-10d %-10f", id, name, genre, studio, episodenumber, rating);
+        return String.format("%5d %-25s %-20s %-20s %-10d %-10fid                         name                    genre                    studio          episode number          rating/n", id, name, genre, studio, episodenumber, rating);
     }
 
 }
