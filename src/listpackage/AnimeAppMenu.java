@@ -10,7 +10,7 @@ import utilities.Prompt;
 public class AnimeAppMenu {
 
     Scanner sc = new Scanner(System.in);
-    AnimeList data = new AnimeList();
+    DAOAnime data = new DAOAnime();
 
     public AnimeAppMenu() {
         menuLoop();
