@@ -55,7 +55,7 @@ public class AnimeAppMenu {
                     name = Prompt.getLine("Enter name: ");
                     genre = Prompt.getLine("Enter genre: ");
                     studio = Prompt.getLine("Enter studio: ");
-                    episodenumber = Prompt.getInt("Enter episode Number: ");
+                    episodenumber = Prompt.getInt("Enter total number of episodes: ");
                     rating = Prompt.getDouble("Enter rating: ");
                     Anime anime = new Anime(id, name, genre, studio, episodenumber, rating);
                     data.create(anime);
@@ -69,7 +69,7 @@ public class AnimeAppMenu {
                     name = Prompt.getLine("Enter name: ");
                     genre = Prompt.getLine("Enter genre: ");
                     studio = Prompt.getLine("Enter studio: ");
-                    episodenumber = Prompt.getInt("Enter episode Number: ");
+                    episodenumber = Prompt.getInt("Enter total number of episodes: ");
                     rating = Prompt.getDouble("Enter rating: ");
                     Anime Anime = new Anime(id, name, genre, studio, episodenumber, rating);
                     data.update(Anime);
